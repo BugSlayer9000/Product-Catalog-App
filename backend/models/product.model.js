@@ -1,0 +1,23 @@
+import mongoose from "mongoose";
+
+const productSchema = new mongoose.Schema({
+    name : {
+        type: String,
+        required: true
+    },
+    price: {
+        type : Number,
+        required: true
+    },
+    Image:{
+        type : String,
+        required : true
+    }
+},{
+    timeseries : true
+})
+
+const Product = mongoose.model('Product', productSchema);
+// this basically says to maongoose this is how you should make a collection called a product and this is the schema you use for that.
+
+export default Product;
